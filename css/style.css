@@ -294,6 +294,57 @@ em { font-style: italic; }
 .mt-3 { margin-top: 3rem; }
 
 /* ===================================================
+   IMAGE PLACEHOLDERS
+   =================================================== */
+.img-placeholder {
+  width: 100%;
+  background: var(--navy-light);
+  border: 1px dashed rgba(201, 168, 76, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--ff-body);
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+.img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 12px,
+    rgba(201, 168, 76, 0.03) 12px,
+    rgba(201, 168, 76, 0.03) 13px
+  );
+}
+.img-placeholder i {
+  font-size: 1.6rem;
+  color: var(--gold);
+  opacity: 0.4;
+  position: relative;
+}
+.img-placeholder span { position: relative; }
+.img-placeholder-hero  { height: 480px; }
+.img-placeholder-large { height: 360px; }
+.img-placeholder-medium { height: 260px; }
+.img-placeholder-small { height: 180px; }
+
+.img-placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+/* ===================================================
    ORNAMENT DIVIDER
    =================================================== */
 .ornament-divider {
@@ -715,6 +766,7 @@ em { font-style: italic; }
    RESPONSIVE
    =================================================== */
 @media (max-width: 900px) {
+  .img-placeholder-grid { grid-template-columns: repeat(2, 1fr); }
   .facility-detail-inner { grid-template-columns: 1fr; gap: 2rem; }
   .facility-detail-meta { position: static; }
   .highlight-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -725,6 +777,7 @@ em { font-style: italic; }
 }
 
 @media (max-width: 640px) {
+  .img-placeholder-grid { grid-template-columns: 1fr; }
   .nav-links {
     display: none;
     position: fixed;
