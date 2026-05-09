@@ -1,5 +1,5 @@
 /* ===================================================
-   CITY OF DAVID — MAIN SCRIPT
+   Boardwalk Fun City — MAIN SCRIPT
    =================================================== */
 
 // Active nav link based on current page
